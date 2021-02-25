@@ -37,10 +37,10 @@
               let feels = $("input[name=feels]:checked").val();
               let likes = $("input[name=likes]:checked").val();
               let eats = $("input[name=eats]:checked").val();
-              let named = $("input[name=names]:checked").val();
+              let named = $("input[name=names]").val();
               let pet = ""; // will store our pet
               let desc ="";
-              alert();
+              
                 
                 if(feels =="fluffy" && likes == "petted" && eats =="carrots"){
                     pet = "rabbit";
@@ -139,7 +139,7 @@
         <div id="pet_name">
         <h3>Name</h3>
         <p>Please tell us what your pet name:</p>
-        <input type="text" name="names" value="names"required="required">place for name <br/>
+        <input type="text" name="names" value=""required="required">place for name <br/>
     </div>
         
   
