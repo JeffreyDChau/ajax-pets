@@ -37,49 +37,59 @@
               let feels = $("input[name=feels]:checked").val();
               let likes = $("input[name=likes]:checked").val();
               let eats = $("input[name=eats]:checked").val();
-              let named = $("input[name=jeff]:checked").val();
+              let named = $("input[name=names]:checked").val();
               let pet = ""; // will store our pet
               let desc ="";
+              alert();
                 
                 if(feels =="fluffy" && likes == "petted" && eats =="carrots"){
                     pet = "rabbit";
                     alert("Magicians best friend!");
                     desc = "Rabbits are fluffy and sleep often";
+                    $("#pic").attr("src", "images/rabbit.jpg");
+                    
                 }
                 if(feels =="fluffy" && likes == "petted" && eats =="pets"){
                     pet = "bear";
                     alert("Watch your picnic baskets!");
                     desc = "Bears are huge and hibernate in winter.";
+                    $("#pic").attr("src", "images/bear.jfif");
                 }
                 if(feels =="fluffy" && likes == "ridden" && eats =="carrots"){
                     pet = "horse";
                     alert("Place your bets!");
                     desc = "Friendly and able to travel.";
+                    $("#pic").attr("src", "images/horse.jpg");
                 }
                 if(feels =="fluffy" && likes == "ridden" && eats =="pets"){
                     pet = "tiger";
                     alert("Best karate stance");
                     desc = "Tiger are kings.";
+                    $("#pic").attr("src", "images/tiger.jpg");
                 }
                 if(feels =="scaly" && likes == "petted" && eats =="carrots"){
                     pet = "turtle";
                     alert("Surprisingly fast");
                     desc = "Turtles can eat almost everything!";
+                    $("#pic").attr("src", "images/turtle.jpg");
                 }
                 if(feels =="scaly" && likes == "petted" && eats =="pets"){
                     pet = "aligator";
                     alert("Do you live in Florida");
                     desc = "Aligators are territorial.";
+                    $("#pic").attr("src", "images/aligator.jpg");
                 }
                 if(feels =="scaly" && likes == "ridden" && eats =="carrots"){
                     pet = "hippo";
                     alert("Apex animal in Africa");
                     desc = "Hippos are the tanks of the animal kingdom.";
+                    $("#pic").attr("src", "images/hippo.jpg");
                 }
                 if(feels =="scaly" && likes == "ridden" && eats =="pets"){
                     pet = "velociraptor";
                     alert("Why would you keep this?");
                     desc = "Velociraptors are not vegetarian.";
+                    $("#pic").attr("src", "images/velociraptor.jpg");
                 }
             
 
@@ -129,12 +139,12 @@
         <div id="pet_name">
         <h3>Name</h3>
         <p>Please tell us what your pet name:</p>
-        <input type="text" name="jeff" value=""required="required">place for name <br/>
+        <input type="text" name="names" value="names"required="required">place for name <br/>
     </div>
         
   
    <input type="submit" value="submit it!" />
-   <div id="pic">Pic of pet goes here</div>
+   <div><img src="" alt="future pet" id="pic"></div>
    <div id="output">Output goes here!</div>
 </form>
 </body>
