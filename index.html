@@ -11,7 +11,8 @@
             //hide 2nd and third question on page load
             $("#pet_likes").hide();
             $("#pet_eats").hide();
-            
+            $("#pet_name").hide();
+
             $("#pet_feels").click(function(e){
                // alert("feels is clicked!")
                $("#pet_likes").slideDown(200);
@@ -20,6 +21,10 @@
             $("#pet_likes").click(function(e){
                // alert("feels is clicked!")
                $("#pet_eats").slideDown(200);
+            });
+            $("#pet_eats").click(function(e){
+               // alert("feels is clicked!")
+               $("#pet_name").slideDown(200);
             });
         
         
@@ -32,14 +37,49 @@
               let feels = $("input[name=feels]:checked").val();
               let likes = $("input[name=likes]:checked").val();
               let eats = $("input[name=eats]:checked").val();
+              let named = $("input[name=jeff]:checked").val();
               let pet = ""; // will store our pet
-
+              let desc ="";
+                
                 if(feels =="fluffy" && likes == "petted" && eats =="carrots"){
                     pet = "rabbit";
+                    alert("Magicians best friend!");
+                    desc = "Rabbits are fluffy and sleep often";
                 }
-
+                if(feels =="fluffy" && likes == "petted" && eats =="pets"){
+                    pet = "bear";
+                    alert("Watch your picnic baskets!");
+                    desc = "Bears are huge and hibernate in winter.";
+                }
+                if(feels =="fluffy" && likes == "ridden" && eats =="carrots"){
+                    pet = "horse";
+                    alert("Place your bets!");
+                    desc = "Friendly and able to travel.";
+                }
+                if(feels =="fluffy" && likes == "ridden" && eats =="pets"){
+                    pet = "tiger";
+                    alert("Best karate stance");
+                    desc = "Tiger are kings.";
+                }
+                if(feels =="scaly" && likes == "petted" && eats =="carrots"){
+                    pet = "turtle";
+                    alert("Surprisingly fast");
+                    desc = "Turtles can eat almost everything!";
+                }
+                if(feels =="scaly" && likes == "petted" && eats =="pets"){
+                    pet = "aligator";
+                    alert("Do you live in Florida");
+                    desc = "Aligators are territorial.";
+                }
+                if(feels =="scaly" && likes == "ridden" && eats =="carrots"){
+                    pet = "hippo";
+                    alert("Apex animal in Africa");
+                    desc = "Hippos are the tanks of the animal kingdom.";
+                }
                 if(feels =="scaly" && likes == "ridden" && eats =="pets"){
                     pet = "velociraptor";
+                    alert("Why would you keep this?");
+                    desc = "Velociraptors are not vegetarian.";
                 }
             
 
@@ -49,7 +89,10 @@
                 output += `<p>Your pet feels: ${feels}</p>`;
                 output += `<p>Your pet to be: ${likes}</p>`;
                 output += `<p>Your pet likes to eat: ${eats}</p>`;
+                output += `<p>Your pet's name is: ${named}</p>`;
+                output += `<p>Desciption: ${desc}</p>`;
                 $("#output").html(output);
+               
 
                 $('#pet').load(`includes/content.html #${pet}`);
                 //$('#pet').load('includes/content.html #cute-kitten'); what it was
@@ -83,9 +126,15 @@
        <input type="radio" name="eats" value="carrots"required="required">carrots <br />
        <input type="radio" name="eats" value="pets">other people's pets <br />
    </div>
+        <div id="pet_name">
+        <h3>Name</h3>
+        <p>Please tell us what your pet name:</p>
+        <input type="text" name="jeff" value=""required="required">place for name <br/>
+    </div>
+        
   
    <input type="submit" value="submit it!" />
-   <div id="pet">Pic of pet goes here</div>
+   <div id="pic">Pic of pet goes here</div>
    <div id="output">Output goes here!</div>
 </form>
 </body>
